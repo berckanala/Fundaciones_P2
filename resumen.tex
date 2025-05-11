@@ -120,7 +120,284 @@
 %Este es el formato a seguir para los titulos de las secciones
 \section{Elasticidad}
 
+\subsection*{Introducción a la teoría de la elasticidad}
 
+La teoría de la elasticidad estudia la mecánica de los cuerpos sólidos, considerados como medios continuos.
+
+\begin{itemize}
+    \item Bajo la acción de fuerzas aplicadas, los sólidos se deforman, es decir, cambian de forma y volumen en mayor o menor grado.
+    \item En un cuerpo que no presenta deformación, la distribución de las moléculas corresponde a su estado de equilibrio, donde la resultante de las fuerzas que actúan es cero.
+\end{itemize}
+
+\subsection*{Supuestos del modelo elástico}
+\begin{itemize}
+    \item El suelo se modela como un medio continuo, homogéneo e isótropo.
+    \item La relación tensión-deformación es lineal (Ley de Hooke).
+    \item Las deformaciones son pequeñas.
+    \item No se consideran fenómenos plásticos ni de fluencia.
+\end{itemize}
+
+\subsection*{Ley constitutiva en 1D}
+\[
+\sigma = E \cdot \varepsilon
+\]
+\begin{itemize}
+    \item $\sigma$: tensión normal (Pa)
+    \item $E$: módulo de Young (Pa)
+    \item $\varepsilon$: deformación unitaria (adimensional)
+\end{itemize}
+
+\subsection*{Ley constitutiva en 3D (forma tensorial)}
+\[
+\sigma_{ij} = C_{ijkl} \cdot \varepsilon_{kl}
+\]
+
+\subsection*{Relación esfuerzo-deformación en 2D (esfuerzo plano)}
+\[
+\begin{bmatrix}
+\sigma_x \\
+\sigma_y \\
+\tau_{xy}
+\end{bmatrix}
+=
+\frac{E}{1 - \nu^2}
+\begin{bmatrix}
+1 & \nu & 0 \\
+\nu & 1 & 0 \\
+0 & 0 & \frac{1 - \nu}{2}
+\end{bmatrix}
+\begin{bmatrix}
+\varepsilon_x \\
+\varepsilon_y \\
+\gamma_{xy}
+\end{bmatrix}
+\]
+\begin{itemize}
+    \item $\nu$: coeficiente de Poisson
+    \item $\tau_{xy}$: esfuerzo cortante (Pa)
+    \item $\gamma_{xy}$: deformación cortante (adimensional)
+\end{itemize}
+\newpage
+\section*{2. Círculo de Mohr}
+
+\subsection*{Concepto}
+
+El Círculo de Mohr es una representación gráfica del estado de esfuerzos en un punto, que permite determinar de forma visual:
+\begin{itemize}
+    \item Los esfuerzos principales.
+    \item El esfuerzo cortante máximo.
+    \item La orientación de los planos principales.
+\end{itemize}
+
+\subsection*{Estado de esfuerzo en 2D}
+
+\begin{itemize}
+    \item $\sigma_x$, $\sigma_y$: esfuerzos normales en las direcciones $x$ e $y$.
+    \item $\tau_{xy}$: esfuerzo cortante sobre los planos $x$ o $y$.
+\end{itemize}
+
+\subsection*{Centro y radio del círculo}
+
+\[
+C = \frac{\sigma_x + \sigma_y}{2}, \quad
+R = \sqrt{\left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2}
+\]
+
+\subsection*{Esfuerzos principales}
+
+\[
+\sigma_{1,2} = C \pm R
+\]
+
+\subsection*{Esfuerzo cortante máximo}
+
+\[
+\tau_{\text{máx}} = R
+\]
+
+\subsection*{Ángulo de orientación de los planos principales}
+
+El ángulo $\theta_p$ entre el eje $x$ y el plano principal (en el espacio físico) se obtiene como:
+
+\[
+\tan(2\theta_p) = \frac{2\tau_{xy}}{\sigma_x - \sigma_y}
+\]
+
+\subsection*{Ecuaciones del círculo (paramétricas)}
+
+Para un ángulo $\theta$ dado:
+
+\[
+\sigma_\theta = \frac{\sigma_x + \sigma_y}{2} + \frac{\sigma_x - \sigma_y}{2} \cos(2\theta) + \tau_{xy} \sin(2\theta)
+\]
+
+\[
+\tau_\theta = -\frac{\sigma_x - \sigma_y}{2} \sin(2\theta) + \tau_{xy} \cos(2\theta)
+\]
+
+\subsection*{Nota}
+
+En la representación gráfica, el ángulo $2\theta$ se mide desde el eje horizontal del círculo (que representa a $\sigma$), y se gira en sentido antihorario.
+
+\newpage
+\section{Incrementos del esfuerzo vertical}
+
+\subsection*{Método de Cálculo empírico}
+
+
+
+\subsection*{Método de Cálculo Elástico}
+\subsubsection*{Carga Puntual}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Graficos/Carga_puntual.PNG}
+    \caption{Esfuerzo vertical en un punto bajo una carga puntual.}
+    \label{fig:incremento_esfuerzo_vertical}
+\end{figure}
+El código de este caso se encuentra en el siguiente link: \href{https://github.com/berckanala/Fundaciones_P2/blob/main/Codigos/python/esfuerzo_puntual.py}{Código esfuerzo puntual}
+En donde:
+\begin{itemize}
+    \item $Q$: carga puntual (N)
+    \item $r$: distancia radial al punto de interés (m)
+    \item $z$: profundidad del punto de interés (m)
+\end{itemize}
+
+\subsubsection*{Carga Distribuida}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Graficos/Carga_distribuida.PNG}
+    \caption{Esfuerzo vertical en un punto bajo una carga distribuida.}
+    \label{fig:distibuido_esfuerzo_vertical}
+\end{figure}
+
+El código de este caso se encuentra en el siguiente link: \href{https://github.com/berckanala/Fundaciones_P2/blob/main/Codigos/python/esfuerzo_distribuida_externa.py}{Código esfuerzo carga distribuida externa}\\
+En donde:
+\begin{itemize}
+    \item $q$: carga distribuida (N/m)
+    \item $a$: distancia entre la carga y el punto de interes (m)
+    \item $z$: profundidad del punto de interés (m)
+    \item $B$: longitud de la carga distribuida (m)
+\end{itemize}
+En cuantos a la carga distribuida interna, el código se encuentra en el siguiente link: \href{https://github.com/berckanala/Fundaciones_P2/blob/main/Codigos/python/esfuerzo_distribuido_interna.py}{Código esfuerzo carga distribuida interna}\\
+En donde:
+\begin{itemize}
+    \item $q$: carga distribuida (N/m)
+    \item $z$: profundidad del punto de interés (m)
+    \item $B$: longitud de la carga distribuida (m)
+\end{itemize}
+
+\subsubsection*{Distribución rectangular uniforme}
+Para este método, dependiendo de donde se encuentre el punto de interés, se debe dividir la fundación en partes iguales. Por ejemplo, si el punto es en el centro de la fundación, se divide en 4 partes iguales, y si el punto de interés es a un lado de la fundación, se divide en 2 partes iguales, como se muestra a continuación:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Graficos/distribucion_rectangular.PNG}
+    \caption{Esfuerzo vertical en un punto bajo una carga distribuida rectangular uniforme.}
+    \label{fig:distribucion_rectangular}
+\end{figure}
+Para poder calcular el esfuerzo en el punto A, se divide en 4 partes iguales, y se calcula el esfuerzo en cada una de las partes, y luego se suman los esfuerzos. Mientras que en el punto B, se divide en 2 partes iguales, y se calcula el esfuerzo en cada una de las partes, y luego se suman los esfuerzos. \\
+El código de este caso se encuentra en el siguiente link: \href{https://github.com/berckanala/Fundaciones_P2/blob/main/Codigos/python/incremento_tensiones.py}{Código esfuerzo carga distribuida rectangular uniforme}\\
+\newpage
+
+\subsubsection*{Distribución circular uniforme}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Graficos/Carga_circular.PNG}
+    \caption{Esfuerzo vertical en un punto bajo una carga distribuida circular uniforme.}
+    \label{fig:distribucion_circular}
+\end{figure}
+
+El código de este caso se encuentra en el siguiente link: \href{https://github.com/berckanala/Fundaciones_P2/blob/main/Codigos/python/esfuerzo_circular.py}{Código esfuerzo carga distribuida circular uniforme}\\
+
+\subsubsection*{Terraplen}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Graficos/Carga_terraplen.PNG}
+    \caption{Esfuerzo vertical en un punto bajo una carga distribuida de terraplen.}
+    \label{fig:terraplen}    
+\end{figure}
+
+Este código se encuentra en el siguiente link: \href{https://github.com/berckanala/Fundaciones_P2/blob/main/Codigos/python/esfuerzo_terraplen.py}{Código esfuerzo terraplen}\\
+En donde:
+\begin{itemize}
+    \item $q$: carga distribuida (N/m)
+    \item $z$: profundidad del punto de interés (m)
+    \item $B1$: longitud de la base del terraplen (m)
+    \item $B2$: longitud de la carga triangular (m)
+\end{itemize}
+
+\section{Asentamiento de la fundación}
+
+
+\subsection*{Tipos de asentamientos en arenas}
+\begin{itemize}
+    \item \textbf{Asentamiento inmediato (elástico)}
+    \item \textbf{Asentamiento consolidado (primaria)}: Es instantánea
+    \item \textbf{Asentamiento secundario}: Es muy baja en general
+\end{itemize}
+\subsection*{Tipos de asentamientos en arcillas}
+\begin{itemize}
+    \item \textbf{Asentamiento inmediato (elástico)}: Tería elástica
+    \item \textbf{Asentamiento consolidado (primaria)}: Consolidación
+    \item \textbf{Asentamiento secundario}: Creep
+\end{itemize}
+
+En arcillas también se presentan asentamientos elásticos.
+Sin embargo, los asentamientos por consolidación primaria son los más
+significativos y se estiman a través de la teoría de consolidación de
+Terzaghi. Además, para estimar la consolidación es necesario conocer los
+parámetros Cc y Cs, los cuales se obtienen del ensayo de tensión-
+deformación en el Odómetro.
+
+\subsection*{Forma general}
+Según la forma general se ocupan 2 ábacos:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Graficos/asentamiento_3.PNG}
+    \caption{Figura de asentamiento.}
+    \label{fig:asentamiento1}
+\end{figure}
+
+Se tiene que utilizar la siguiente fórmula para poder calcular el asentamiento:
+\[
+S_e = A_1 \cdot A_2 \frac{q_0 B}{E_s}
+\]
+
+
+\begin{itemize}
+    \item $S_e$: Asentamiento elástico (m)
+    \item $A_1$: Coeficiente de asentamiento (m)
+    \item $A_2$: Coeficiente de asentamiento (m)
+    \item $q_0$: Carga aplicada (kN/m2)
+    \item $B$: Ancho de la fundación (m)
+    \item $E_s$: Módulo de elasticidad del suelo (kN/m2)
+\end{itemize}
+\newpage
+A continuación se presentan los ábacos de asentamiento A1 y A2, que son:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Graficos/asentamiento_2.PNG}
+    \caption{Ábaco de asentamiento A1.}
+    \label{fig:asentamiento2}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Graficos/asentamiento_1.PNG}
+    \caption{Ábaco de asentamiento A2.}
+    \label{fig:asentamiento3}
+\end{figure}
+
+Además, de la teroría elástica, se sabe que:
+
+\[
+\Delta l = \frac{q \alpha B}{E}
+\]
+Donde $\alpha$ es el coeficiente de asentamiento, que depende del tipo de suelo y de la carga aplicada.\\
 
 
 \end{document}
