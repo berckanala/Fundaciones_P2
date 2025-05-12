@@ -177,6 +177,22 @@ La teoría de la elasticidad estudia la mecánica de los cuerpos sólidos, consi
     \item $\tau_{xy}$: esfuerzo cortante (Pa)
     \item $\gamma_{xy}$: deformación cortante (adimensional)
 \end{itemize}
+
+Para estimar el módulo de elasticidad, se puede usar la siguiente relación:
+\begin{equation}
+    E \approx 718(1- \nu^2)N_{spt}
+\end{equation}
+
+Para limos con arena hasta grava con arena:
+\begin{equation}
+E \approx 
+\begin{cases}
+4000 + 100C(N_{\text{spt}} - 6) & \text{for } N > 15 \\
+100C(N_{\text{spt}} - 6)        & \text{for } N < 15
+\end{cases}
+\end{equation}
+Donde C=3 para limos con arena y C=12 para grava con arena.
+
 \newpage
 \section*{2. Círculo de Mohr}
 
@@ -362,7 +378,7 @@ Según la forma general se ocupan 2 ábacos:
 
 Se tiene que utilizar la siguiente fórmula para poder calcular el asentamiento:
 \[
-S_e = A_1 \cdot A_2 \frac{q_0 B}{E_s}
+S_e = A_1 \cdot A_2 \frac{q_0 B}{E_s} \rightarrow S_e = A_1 \cdot A_2 \frac{q_0 B (1 -\mu ^2)}{E_s} \rightarrow \mu_0 \cdot \mu_1 \cdot \frac{q B}{E_s} \cdot (1- \mu^2)
 \]
 
 
@@ -375,29 +391,260 @@ S_e = A_1 \cdot A_2 \frac{q_0 B}{E_s}
     \item $E_s$: Módulo de elasticidad del suelo (kN/m2)
 \end{itemize}
 \newpage
-A continuación se presentan los ábacos de asentamiento A1 y A2, que son:
-
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{Graficos/asentamiento_2.PNG}
-    \caption{Ábaco de asentamiento A1.}
-    \label{fig:asentamiento2}
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graficos/asentamiento_2.PNG}
+        \caption{Ábaco de asentamiento A1 y $\mu_1$.}
+        \label{fig:asentamiento2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Graficos/asentamiento_1.PNG}
+        \caption{Ábaco de asentamiento A2.}
+        \label{fig:asentamiento3}
+    \end{minipage}
 \end{figure}
 
-
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{Graficos/asentamiento_1.PNG}
-    \caption{Ábaco de asentamiento A2.}
-    \label{fig:asentamiento3}
+    \includegraphics[width=0.7\textwidth]{Graficos/asentamiento_4.PNG}
+    \caption{Ábaco de asentamiento $\mu_0$.}
+    \label{fig:asentamiento4}    
 \end{figure}
 
 Además, de la teroría elástica, se sabe que:
 
 \[
-\Delta l = \frac{q \alpha B}{E}
+\Delta l = \frac{q \alpha B}{E} \hspace{1cm} E_s = \frac{\sum E_{si}\cdot \Delta z}{z'} \rightarrow \text{Donde z' es H o 5B, el que sea menor}
 \]
 Donde $\alpha$ es el coeficiente de asentamiento, que depende del tipo de suelo y de la carga aplicada.\\
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|ccc|c|}
+\hline
+\textbf{Shape} & \multicolumn{3}{c|}{\textbf{Flexible}} & \textbf{Rigid} \\
+\cline{2-4}
+ & Centre & Corner & Average & \\ 
+\hline
+Circle    & 1.00 & 0.64 & 0.85 & 0.80 \\
+\hline
+Rectangle & & & & |\\
+\hline
+1.0       & 1.12 & 0.56 & 0.95 & 0.90 \\
+1.5       & 1.36 & 0.68 & 1.20 & 1.09 \\
+2.0       & 1.53 & 0.77 & 1.31 & 1.22 \\
+5.0       & 2.10 & 1.05 & 1.83 & 1.68 \\
+10.0      & 2.52 & 1.26 & 2.25 & 2.02 \\
+100.0     & 3.38 & 1.69 & 2.96 & 2.70 \\
+\hline
+\end{tabular}
+\caption{Settlement influence factors for different footing shapes and rigidity conditions.}
+\label{tab:settlement_factors}
+\end{table}
+
+\[
+S_e = q B \frac{1 - \mu^2}{E_s} \cdot I_f \hspace{1cm} \text{Leonards(1962), Tabla \ref{tab:settlement_factors}}
+\]
+
+
+\newpage
+\section{Fundaciones superficiales}
+Cómo la realción entre profundidad de enterramiento y el ancho de zapata definen la mannera en que se abordan los problemas de fundaciones en suelo?
+
+\begin{itemize}
+    \item Cuando $D<B$: Fundación superficial
+    \item Cuando $D>B$: Fundación no superficial
+\end{itemize}
+
+Ventajas:
+\begin{itemize}
+    \item Menor costo
+    \item Sencillas de construir
+    \item Permiten inspección del terrenos
+\end{itemize}
+
+\textbf{Dónde NO usar fundaciones superficiales:}
+\begin{itemize}
+    \item Terrenos con alta compresibilidad
+    \item Suelos orgánicos
+    \item Terrenos expansivos
+    \begin{itemize}
+        \item Asentamintos excesivos
+        \item Asentamientos diferenciales
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Criterios para el diseño de una fundación}
+
+Los siguientes aspectos deben ser considerados al diseñar una cimentación adecuada:
+
+\begin{itemize}
+    \item \textbf{Cargas estructurales}: magnitud, distribución y naturaleza de las cargas que la estructura transmitirá al suelo.
+    \item \textbf{Características del suelo de fundación}: conocimiento del tipo de suelo, perfil estratigráfico, parámetros geotécnicos y nivel freático.
+    \item \textbf{Asentamiento tolerable}: deformación vertical máxima admisible sin afectar el comportamiento estructural o funcional de la obra.
+    \item \textbf{Capacidad de soporte del suelo}: verificación de que el suelo tiene resistencia al corte suficiente para evitar falla por hundimiento o deslizamiento.
+\end{itemize}
+
+
+\subsection*{Tipos de fundaciones superficiales}
+La elección entre una fundación u otra debe ser consultada por un ingeniero
+geotécnico, considerando la capacidad del suelo, el tipo de suelo, la
+susceptibilidad del suelo ante deflexiones, etc.
+Los tipos de fundaciones más comunes son continua, aislada y combinada.
+\begin{itemize}
+    \item \textbf{Fundación continua (L/B $>$ 10)}: Se utiliza para estructuras lineales, como muros de contención o edificios con paredes continuas. Distribuye la carga a lo largo de una línea.
+    \item \textbf{Vigas de amarre}: Se utilizan para columnas a más de 7 metros de distancia, cuando existen momentos grandes y asentamiento diferenciales grandes
+    \item \textbf{Fundación combinada}: Se utiliza cuando las cargas de dos o más columnas son cercanas entre sí y se combinan en una sola base.
+    \item \textbf{Losa de Fundación}: Se utiliza para estructuras grandes o pesadas, como edificios de varios pisos. Distribuye la carga en una gran área. Espesor no mayor a 1 metro.
+\end{itemize}
+
+\subsection*{Construcción de fundaciones superficiales}
+\begin{itemize}
+    \item \textbf{Excavación}: Se excava el terreno hasta la profundidad deseada, asegurando que el fondo de la excavación esté nivelado y libre de escombros.
+    \item \textbf{Sello de fundación}: Se coloca un sello de fundación, que puede ser de hormigón pobre o de material granular, para proporcionar una base uniforme y estable.
+    \item \textbf{Recubrimiento de hormigón pobre}: Se coloca una capa de hormigón pobre sobre el sello de fundación para protegerlo y proporcionar una superficie de apoyo.
+    \item \textbf{Moldaje y enfierradura}: Se instalan los moldes y la armadura de acero según el diseño estructural. La armadura debe estar correctamente posicionada y anclada.
+    \item \textbf{Hormigón y curado}: Se vierte el hormigón en los moldes y se compacta adecuadamente. Después de verter, se debe curar el hormigón para asegurar su resistencia y durabilidad.
+    \item \textbf{Relleno estructural}: Una vez que el hormigón ha alcanzado la resistencia adecuada, se puede proceder a rellenar el área alrededor de la fundación con material adecuado, como tierra o grava.
+\end{itemize}
+
+\subsection*{A inspeccionar}
+\begin{itemize}
+    \item \textbf{Aspectos Legales/Planos}
+    \item \textbf{Profundidad de la base}
+    \item \textbf{Tipo de suelo de fundación}
+    \item \textbf{Limpiar antes de hormigonar}
+    \item \textbf{Chequeo de dimensiones}
+    \item \textbf{Chequeo de espesores}
+    \item \textbf{Chequeo de conexiones}
+    \item \textbf{Hormigoneo de fundaciones}
+    \item \textbf{Tiempo de hormigones}
+    \item \textbf{Integridad después de hormigonar}
+\end{itemize}
+\subsection*{Criterios de desempeño}
+
+Para un buen desempeño, una fundación debe cumplir con los siguientes requisitos:
+
+\begin{itemize}
+    \item No debe experimentar desplazamientos ni asentamientos excesivos que puedan comprometer la funcionalidad o estabilidad de la estructura.
+    \item Debe ser segura frente a la falla general por corte del suelo que la sostiene, lo que se evalúa mediante la \textbf{capacidad de soporte} (resistencia al corte).
+\end{itemize}
+
+\subsection*{Naturaleza de la falla por capacidad de carga}
+
+Existen distintas formas de falla del suelo según sus características y condiciones de carga. Las principales son:
+
+\begin{itemize}
+    \item \textbf{Falla general por corte}: ocurre en suelos densos o cementados, donde se forma una superficie de rotura bien definida. La carga-deformación presenta un claro pico.
+    
+    \item \textbf{Falla por punzonamiento}: se presenta en suelos muy rígidos o cuando el área de la zapata es pequeña; la fundación "perfora" el suelo sin generar desplazamientos laterales apreciables.
+
+    \item \textbf{Falla local por corte}: típica en suelos sueltos o con baja cohesión. No se genera una superficie de falla bien definida y la deformación ocurre progresivamente.
+\end{itemize}
+
+Se denomina $q_u$ a la \textbf{capacidad última de soporte}, es decir, la máxima carga por unidad de área que el suelo puede resistir antes de fallar.  
+En suelos medianamente sueltos o sueltos, puede observarse una primera carga de falla conocida como $q_{u(1)}$, que representa el primer punto en que se manifiesta una inestabilidad localizada antes de alcanzar la carga última $q_u$.
+
+
+\subsubsection*{Falla general por corte}
+
+Una \textbf{falla general} se caracteriza por el desarrollo completo de superficies de rotura, permitiendo que la falla alcance la superficie del terreno. Se produce un deslizamiento relativo a lo largo de todo el plano de falla.
+
+En el contexto de fundaciones, este tipo de falla ocurre cuando se supera la \textbf{capacidad última de soporte} del suelo ($q_u$).
+
+\begin{itemize}
+    \item Es típica en suelos de arena densa, cohesivos o firmes.
+    \item La falla es repentina y catastrófica (comportamiento frágil), y se representa con un valor peak bien definido de $q_u$.
+    \item El patrón de falla es claramente identificable, con las tres zonas de rotura bien desarrolladas.
+    \item En la curva de asentamiento versus carga, el valor de $q_u$ se distingue de forma clara como un máximo.
+\end{itemize}
+
+\subsubsection*{Falla local por corte}
+
+La \textbf{falla local} ocurre cuando se desarrolla parcialmente la superficie de rotura, generalmente acompañada de deformaciones plásticas en el suelo. A diferencia de la falla general, el plano de falla no alcanza la superficie, aunque puede existir cierto deslizamiento relativo entre planos internos del terreno.
+
+\begin{itemize}
+    \item Es típica en suelos arenosos o arcillosos medianamente compactados.
+    \item En la primera carga de falla ($q_{u(1)}$), se perciben sacudidas repentinas en el sistema.
+    \item Representa un estado de transición entre la falla general y la falla por punzonamiento.
+    \item El valor de $q_u$ no se distingue claramente en el gráfico de asentamiento versus carga.
+\end{itemize}
+
+\subsubsection*{Falla por punzonamiento}
+
+La \textbf{falla por punzonamiento} se presenta cuando se produce una densificación localizada del suelo, acompañada de una distorsión vertical debido a la aplicación de la carga. No se desarrollan superficies de falla definidas. En fundaciones, este fenómeno se manifiesta como un desplazamiento vertical significativo sin una rotura completa del medio.
+
+\begin{itemize}
+    \item Es típica en suelos muy sueltos o no cohesivos.
+    \item En la primera carga de falla ($q_{u(1)}$), se generan asentamientos grandes; el gráfico carga-asentamiento es muy pronunciado y presenta una tendencia casi lineal.
+    \item El patrón de falla es poco definido.
+    \item El valor de $q_{u(1)}$ no se identifica con claridad. La curva es más suave en comparación con la falla local.
+\end{itemize}
+
+\newpage
+
+
+\section*{Teoría de la capacidad de carga de Terzaghi}
+
+La teoría de Terzaghi permite estimar la capacidad última de soporte ($q_u$) de fundaciones superficiales en suelos. Esta teoría es aplicable a zapatas apoyadas sobre suelos homogéneos, secos, sin estratificación significativa y con comportamiento plástico o friccional.
+
+\subsection*{Supuestos principales}
+\begin{itemize}
+    \item El suelo es homogéneo, isotrópico y semiinfinito.
+    \item El plano de falla es bien definido (falla general por corte).
+    \item La fundación es superficial (zapata continua o rectangular).
+    \item El contacto entre la fundación y el suelo es rugoso (adhesión completa).
+    \item La carga es vertical, centrada y estática.
+\end{itemize}
+
+\subsection*{Fórmula general de Terzaghi (zapata continua)}
+
+\[
+q_u = c \cdot N_c + \gamma \cdot D_f \cdot N_q + 0.5 \cdot \gamma \cdot B \cdot N_\gamma
+\]
+
+\begin{itemize}
+    \item $q_u$: capacidad última de soporte (kPa)
+    \item $c$: cohesión del suelo (kPa)
+    \item $\gamma$: peso unitario del suelo (kN/m³)
+    \item $D_f$: profundidad de desplante de la zapata (m)
+    \item $B$: ancho de la zapata (m)
+    \item $N_c$, $N_q$, $N_\gamma$: factores de capacidad de carga (dependen de $\phi$)
+\end{itemize}
+
+\subsection*{Factores de capacidad de carga (para $\phi > 0$)}
+
+Los factores de capacidad de carga $N_c$, $N_q$ y $N_\gamma$ se definen mediante las siguientes expresiones:
+
+\begin{equation}
+N_c = \cot \phi' \left[ 
+\frac{e^{2(3\pi/4 - \phi'/2)\tan \phi'} - 1}{2 \cos^2\left( \frac{\pi}{4} + \frac{\phi'}{2} \right)} 
+\right] 
+= \cot \phi' (N_q - 1)
+\end{equation}
+
+\begin{equation}
+N_q = 
+\frac{e^{2(3\pi/4 - \phi'/2)\tan \phi'}}{2 \cos^2\left( 45^\circ + \frac{\phi'}{2} \right)}
+\end{equation}
+
+\begin{equation}
+N_\gamma = \frac{1}{2} \left( \frac{K_{pry}}{\cos^2 \phi'} - 1 \right) \tan \phi'
+\end{equation}
+
+\subsection*{Consideraciones prácticas}
+\begin{itemize}
+    \item En suelos puramente cohesivos ($\phi = 0$), se anulan los términos con $N_q$ y $N_\gamma$.
+    \item Para zapatas rectangulares o cuadradas, se aplican factores de forma.
+    \item Para obtener la capacidad admisible ($q_{adm}$), se divide $q_u$ por un factor de seguridad ($FS$):
+    \[
+    q_{adm} = \frac{q_u}{FS}
+    \]
+\end{itemize}
 
 
 \end{document}
