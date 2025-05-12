@@ -1,0 +1,34 @@
+import math
+
+def capacidad_carga_factors(phi_deg, K_pry=1.0):
+    """
+    Calcula los factores Nc, Nq y Ngamma según Terzaghi.
+    
+    Parámetros:
+    - phi_deg: ángulo de fricción efectiva φ' en grados
+    - K_pry: coeficiente de presión pasiva (por defecto 1.0 si no se especifica)
+
+    Retorna:
+    - Nc, Nq, Ngamma
+    """
+    phi = math.radians(phi_deg)  # convertir a radianes
+
+    # Nq
+    nq_exp = 2 * (3 * math.pi / 4 - phi / 2) * math.tan(phi)
+    nq_num = math.exp(nq_exp)
+    nq_den = 2 * math.cos(math.radians(45) + phi / 2)**2
+    Nq = nq_num / nq_den
+
+    # Nc
+    Nc = math.cos(phi) / math.sin(phi) * (Nq - 1)  # cot(phi) = cos(phi)/sin(phi)
+
+    # Ngamma
+    Ngamma = 0.5 * ((K_pry / (math.cos(phi)**2)) - 1) * math.tan(phi)
+
+    return round(Nc, 3), round(Nq, 3), round(Ngamma, 3)
+
+# Ejemplo de uso
+phi_input = 30  # grados
+Nc, Nq, Ngamma = capacidad_carga_factors(phi_input)
+
+print(f"Nc = {Nc}, Nq = {Nq}, Ngamma = {Ngamma}")

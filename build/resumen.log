@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.1.16)  11 MAY 2025 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.1.16)  11 MAY 2025 21:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -878,9 +878,24 @@ Package pdftex.def Info: Graficos/LOGO_UNIVERSIDAD.jpg  used on input line 588.
 [10]
 File: Graficos/LOGO_UNIVERSIDAD.jpg Graphic file (type jpg)
 <use Graficos/LOGO_UNIVERSIDAD.jpg>
-Package pdftex.def Info: Graficos/LOGO_UNIVERSIDAD.jpg  used on input line 650.
+Package pdftex.def Info: Graficos/LOGO_UNIVERSIDAD.jpg  used on input line 649.
 (pdftex.def)             Requested size: 110.8946pt x 40.20973pt.
- [11] (c:\Users\HP\Desktop\Uandes\9no_semestre\01-Fundaciones\Fundaciones_P2\build\resumen.aux
+ [11]
+<Graficos/Terzaghi.PNG, id=170, 518.53725pt x 469.15276pt>
+File: Graficos/Terzaghi.PNG Graphic file (type png)
+<use Graficos/Terzaghi.PNG>
+Package pdftex.def Info: Graficos/Terzaghi.PNG  used on input line 653.
+(pdftex.def)             Requested size: 399.21791pt x 361.19861pt.
+File: Graficos/LOGO_UNIVERSIDAD.jpg Graphic file (type jpg)
+<use Graficos/LOGO_UNIVERSIDAD.jpg>
+Package pdftex.def Info: Graficos/LOGO_UNIVERSIDAD.jpg  used on input line 659.
+(pdftex.def)             Requested size: 110.8946pt x 40.20973pt.
+ [12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.659 \end{document}
+                     <./Graficos/Terzaghi.PNG>] (c:\Users\HP\Desktop\Uandes\9no_semestre\01-Fundaciones\Fundaciones_P2\build\resumen.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -892,17 +907,17 @@ Package rerunfilecheck Info: File `resumen.out' has not changed.
 (rerunfilecheck)             Checksum: BB7E5FF8AB6FDC6C86FEC159F2AEF6EC;681.
  ) 
 Here is how much of TeX's memory you used:
- 24343 strings out of 474485
- 448438 string characters out of 5745150
+ 24354 strings out of 474485
+ 448683 string characters out of 5745150
  1940542 words of memory out of 5000000
- 46148 multiletter control sequences out of 15000+600000
+ 46156 multiletter control sequences out of 15000+600000
  564094 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,16n,93p,644b,538s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\HP\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on c:\Users\HP\Desktop\Uandes\9no_semestre\01-Fundaciones\Fundaciones_P2\build\resumen.pdf (12 pages, 588168 bytes).
+Output written on c:\Users\HP\Desktop\Uandes\9no_semestre\01-Fundaciones\Fundaciones_P2\build\resumen.pdf (13 pages, 724063 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 95 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
+ 100 words of extra memory for PDF output out of 10000 (max. 10000000)
 

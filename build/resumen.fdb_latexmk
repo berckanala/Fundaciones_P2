@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1747012979.53163 "c:/Users/HP/Desktop/Uandes/9no_semestre/01-Fundaciones/Fundaciones_P2/resumen.tex" "build/resumen.pdf" "resumen" 1747012984.89264 0
+["pdflatex"] 1747013243.21052 "c:/Users/HP/Desktop/Uandes/9no_semestre/01-Fundaciones/Fundaciones_P2/resumen.tex" "build/resumen.pdf" "resumen" 1747013249.10396 0
   "C:/Users/HP/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1745806504 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/HP/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1743883286 11548 bed362cf0020b2ef386cbc689dc72075 ""
   "C:/Users/HP/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1737064493 24223671 52e757c3bac48b06425ee7826828ea6d ""
@@ -175,15 +175,16 @@
   "Graficos/Carga_puntual.PNG" 1746914224 16204 bfa41faa7438590150c7cb191c022500 ""
   "Graficos/Carga_terraplen.PNG" 1746917109 18867 50ca314573f0fe30b656f22a583b60da ""
   "Graficos/LOGO_UNIVERSIDAD.jpg" 1725225542 209820 2134e729a4493a99d3d34c719af1eecf ""
+  "Graficos/Terzaghi.PNG" 1747013178 155283 e9c9e6408805429b499c3d4bf29de77c ""
   "Graficos/asentamiento_1.PNG" 1746929862 7667 acedfec0d61bc6b391f3dd460dd53ed4 ""
   "Graficos/asentamiento_2.PNG" 1746929832 22183 0664a6af0d762a7bce2ba35a7cb2c61c ""
   "Graficos/asentamiento_3.PNG" 1746929891 5863 efcbf4d29284185b245fea3e79dfe271 ""
   "Graficos/asentamiento_4.PNG" 1746998261 93810 0f2686afc170e155e0bcb1c6d41d2e64 ""
   "Graficos/distribucion_rectangular.PNG" 1746915457 4150 62448f1fdf36f3f769bdb124b4732829 ""
-  "build/resumen.aux" 1747012984 3534 0b2d1097308591e395e2f54c2478f1e7 "pdflatex"
-  "build/resumen.out" 1747012984 681 bb7e5ff8ab6fdc6c86fec159f2aef6ec "pdflatex"
-  "c:/Users/HP/Desktop/Uandes/9no_semestre/01-Fundaciones/Fundaciones_P2/resumen.tex" 1747012977 30503 4909240dbcfde47e330b1e950d963940 ""
-  "resumen.tex" 1747012977 30503 4909240dbcfde47e330b1e950d963940 ""
+  "build/resumen.aux" 1747013248 3791 c40be444b9c7fa557859033db2fb7591 "pdflatex"
+  "build/resumen.out" 1747013248 681 bb7e5ff8ab6fdc6c86fec159f2aef6ec "pdflatex"
+  "c:/Users/HP/Desktop/Uandes/9no_semestre/01-Fundaciones/Fundaciones_P2/resumen.tex" 1747013241 30779 f7de33dd877d91542144d67e2581b9e6 ""
+  "resumen.tex" 1747013241 30779 f7de33dd877d91542144d67e2581b9e6 ""
   (generated)
   "build/resumen.aux"
   "build/resumen.log"
